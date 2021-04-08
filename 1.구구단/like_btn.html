@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>구구단</title>
+</head>
+<body>
+    <div id="app">
+        <div v-if="liked">좋아요 눌렀음</div>
+        <button @click="onclickButton()">Like</button>
+    </div>
+</body>
+</html>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            liked: false,
+        },
+        methods: {
+            onclickButton() {
+                if(this.liked == false){
+                    this.liked = true;
+                } else {
+                    this.liked = false;
+                }
+                
+            },
+        },
+    });
+</script>
