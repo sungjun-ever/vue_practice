@@ -14,7 +14,13 @@ module.exports = {
     module: {
         rules: [{
             test: /\.vue$/,
-            loader: 'vue-loader',
+            use: 'vue-loader',
+        }, {
+            test: /\.css$/,
+            use: [
+                'vue-style-loader',
+                'css-loader',
+            ]
         }],
     },
 
@@ -24,6 +30,7 @@ module.exports = {
 
     output: {
         filename: '[name].js', //app.js로 해도됨
-        path: path.join(__dirname, 'dist') // dist 이름은 임의로 해도 됨
+        path: path.join(__dirname, 'dist'), // dist 이름은 임의로 해도 됨
+        publicPath: '/dist',
     },
 }
